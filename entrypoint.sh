@@ -25,7 +25,7 @@ org="${INPUT_ORG:-${FLY_ORG:-personal}}"
 image="$INPUT_IMAGE"
 # config="${INPUT_CONFIG:-fly.toml}"
 config="fly.review.toml"
-token="${FLY_API_TOKEN}"
+echo $FLY_API_TOKEN
 
 if ! echo "$app" | grep "$PR_NUMBER"; then
   echo "For safety, this action requires the app's name to contain the PR number."
