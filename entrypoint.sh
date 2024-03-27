@@ -41,7 +41,7 @@ fi
 if ! flyctl status --app "$app"; then
   # Backup the original config file since 'flyctl launch' messes up the [build.args] section
   cp "$config" "$config.bak"
-  flyctl launch --no-deploy --copy-config --name "$app" --image "$image" --region "$region" --org "$org"
+  flyctl launch --no-deploy --copy-config --name "$app" --image "$image" --region "$region" --org "$org" --env FLY_API_TOKEN=$(fly auth token)
   # Restore the original config file
   cp "$config.bak" "$config"
 fi
