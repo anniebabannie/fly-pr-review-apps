@@ -2,9 +2,6 @@
 
 set -ex
 
-echo "========================="
-echo $INPUT_NAME
-
 if [ -n "$INPUT_PATH" ]; then
   # Allow user to change directories in which to run Fly commands.
   cd "$INPUT_PATH" || exit
@@ -29,7 +26,7 @@ org="${INPUT_ORG:-${FLY_ORG:-personal}}"
 image="$INPUT_IMAGE"
 # config="${INPUT_CONFIG:-fly.toml}"
 config="fly.review.toml"
-echo $FLY_API_TOKEN
+input_name="${INPUT_NAME}"
 
 if ! echo "$app" | grep "$PR_NUMBER"; then
   echo "For safety, this action requires the app's name to contain the PR number."
