@@ -2,6 +2,9 @@
 
 set -ex
 
+echo "========================="
+echo $INPUT_NAME
+
 if [ -n "$INPUT_PATH" ]; then
   # Allow user to change directories in which to run Fly commands.
   cd "$INPUT_PATH" || exit
